@@ -1,18 +1,22 @@
 import React from 'react';
 import { View } from 'react-native';
 import {
-  StackNavigator
+  createStackNavigator
 } from 'react-navigation';
 import * as Screens from './app/screens';
 import {AppLoading, Font} from 'expo';
 import {bootstrap} from './app/config/bootstrap';
 
 bootstrap();
-const TipToeApp = StackNavigator({
-  First: {
-    screen: Screens.SignUp
+const TipToeApp = createStackNavigator(
+  {
+    Login: Screens.Login,
+    SignUp: Screens.SignUp
+  },
+  {
+    initialRouteName: 'Login',
   }
-});
+);
 
 export default class App extends React.Component {
   state = {

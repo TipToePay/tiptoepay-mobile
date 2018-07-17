@@ -2,7 +2,8 @@ import React from 'react';
 import {
   View,
   Image,
-  Keyboard
+  Keyboard,
+  Alert
 } from 'react-native';
 import {
   RkButton,
@@ -46,13 +47,13 @@ export class SignUp extends React.Component {
             <RkTextInput rkType='rounded' placeholder='Password' secureTextEntry={true}/>
             <RkTextInput rkType='rounded' placeholder='Confirm Password' secureTextEntry={true}/>
             <GradientButton style={styles.save} rkType='large' text='SIGN UP' onPress={() => {
-              this.props.navigation.goBack()
+              Alert.alert('GIVE ME API!');
             }}/>
           </View>
           <View style={styles.footer}>
             <View style={styles.textRow}>
               <RkText rkType='primary3'>Already have an account?</RkText>
-              <RkButton rkType='clear'  onPress={() => this.props.navigation.navigate('Login1')}>
+              <RkButton rkType='clear'  onPress={() => this.props.navigation.navigate('Login')}>
                 <RkText rkType='header6'> Sign in now </RkText>
               </RkButton>
             </View>
